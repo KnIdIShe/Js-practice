@@ -1,0 +1,36 @@
+// 请选择出指定条件的节点：
+// https://www.liaoxuefeng.com/wiki/1022910821149312/1023022310122752
+
+
+// <!-- HTML结构 -->
+// <div id="test-div">
+// 	<div class="c-red">
+// 		<p id="test-p">JavaScript</p>
+// 		<p>Java</p>
+// 	</div>
+// 	<div class="c-red c-green">
+// 		<p>Python</p>
+// 		<p>Ruby</p>
+// 		<p>Swift</p>
+// 	</div>
+// 	<div class="c-green">
+// 		<p>Scheme</p>
+// 		<p>Haskell</p>
+// 	</div>
+// </div>
+
+
+// 选择<p>JavaScript</p>:
+//var js = document.getElementById('test-p');
+var js = document.querySelector('#test-p');
+
+// 选择<p>Python</p>,<p>Ruby</p>,<p>Swift</p>:
+//var arr = document.getElementsByClassName('c-red c-green')[0].getElementsByTagName('p');
+//var arr = document.getElementsByClassName('div.c-red c-green > p');
+var arr = document.querySelectorAll('.c-red.c-green > p');
+
+// 选择<p>Haskell</p>:
+
+//var haskell = document.querySelectorAll('[class = "c-green"] > p')[1];
+var haskell = document.querySelector('[class = "c-green"]').lastElementChild;
+// var haskell = document.querySelector('.c-green:not(.c-red)').lastElementChild;
