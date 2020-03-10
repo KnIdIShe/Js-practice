@@ -1,0 +1,19 @@
+// 删除DOM  removeChild
+// https://www.liaoxuefeng.com/wiki/1022910821149312/1026162402784992
+
+
+var parent = document.querySelector('#test-list');
+
+// way 1
+[...parent.children].forEach(e => {
+	if (! /JavaScript|HTML|CSS/.test(e.innerText) ) {
+		parent.removeChild(e);
+	}
+});
+
+// way 2
+[...parent.children].forEach(e => {
+	if (! ['JavaScript','HTML','CSS'].includes(e.innerText) ) {
+		parent.removeChild(e);
+	}
+});
