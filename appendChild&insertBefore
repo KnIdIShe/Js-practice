@@ -1,0 +1,17 @@
+// 按字符串顺序重新排序DOM节点：
+// https://www.liaoxuefeng.com/wiki/1022910821149312/1026155949848768
+
+// way 1  获取节点  得到字符串数组  排序  重新赋值
+var list = [...document.querySelectorAll('.lang')];
+var sort = list.map(e => e.innerText).sort();
+list.map((e, i) => e.innerText = sort[i]);
+
+
+// way 2  获取节点列表  操作节点列表
+var list = [...document.querySelectorAll('.lang')];
+list.forEach((x, y) => {
+	if (y.innerText < x.innerText) {
+		// document.querySelector('#test-list').insertBefore(y, x);  //  插入
+		document.querySelector('#test-list').appendChild(y);  // or 增加子节点
+	}
+});
